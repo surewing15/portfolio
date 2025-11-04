@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PayTrack - Smart Financial Management for Small Businesses</title>
+
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="antialiased bg-gray-50">
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 flex items-center">
+              <h1 class="text-2xl font-bold text-blue-600">
+                Financial Management
+              </h1>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <a
+              href="#login"
+              class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
+              >Login</a
+            >
+            <a
+              href="#register"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out"
+              >Get Started</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="pt-16 bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            Financial Management for
+            <span class="text-blue-600 block">Camiguin Businesses</span>
+          </h1>
+          <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Designed for small business owners in Balbagon, Mambajao, and across
+            Camiguin. Track your sari-sari store sales, resort bookings, tour
+            operations, and restaurant expenses with PayTrack - built to
+            understand local business needs.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#register"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition duration-150 ease-in-out shadow-lg hover:shadow-xl"
+            >
+              Start Free
+            </a>
+            <a
+              href="#features"
+              class="bg-white hover:bg-gray-50 text-blue-600 px-8 py-3 rounded-lg text-lg font-semibold border-2 border-blue-600 transition duration-150 ease-in-out"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-20 relative">
+          <div class="bg-white rounded-xl shadow-2xl overflow-hidden border">
+            <div class="bg-gray-800 px-4 py-3 flex items-center space-x-2">
+              <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+            <div class="p-8">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                  <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-green-100 mr-4">
+                      <svg
+                        class="h-8 w-8 text-green-600"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="text-sm font-medium text-gray-600">
+                        Total Income
+                      </p>
+                      <p class="text-3xl font-bold text-green-600">₱45,250</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-red-50 p-6 rounded-lg border border-red-200">
+                  <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-red-100 mr-4">
+                      <svg
+                        class="h-8 w-8 text-red-600"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M18 12H6"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="text-sm font-medium text-gray-600">
+                        Total Expenses
+                      </p>
+                      <p class="text-3xl font-bold text-red-600">₱28,430</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                  <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-blue-100 mr-4">
+                      <svg
+                        class="h-8 w-8 text-blue-600"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="text-sm font-medium text-gray-600">
+                        Net Profit
+                      </p>
+                      <p class="text-3xl font-bold text-blue-600">₱16,820</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gray-50 rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-4">Recent Transactions</h3>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                      <span class="text-gray-700"
+                        >Island Tour Booking - White Island</span
+                      >
+                    </div>
+                    <span class="text-green-600 font-semibold">+₱3,500.00</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <div class="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                      <span class="text-gray-700">Boat Fuel & Maintenance</span>
+                    </div>
+                    <span class="text-red-600 font-semibold">-₱850.00</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                      <span class="text-gray-700">Resort Room Booking</span>
+                    </div>
+                    <span class="text-green-600 font-semibold">+₱2,800.00</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <div class="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                      <span class="text-gray-700">Restaurant Supplies</span>
+                    </div>
+                    <span class="text-red-600 font-semibold">-₱1,200.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="features" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Built for Camiguin's Local Business Community
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            From tourism operators to local retailers, PayTrack understands the
+            unique financial challenges of businesses in Balbagon and across
+            Camiguin Island.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <svg
+                class="w-6 h-6 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Transaction Tracking
+            </h3>
+            <p class="text-gray-600">
+              Perfect for sari-sari stores, restaurants, and tour operations.
+              Track sales, inventory purchases, and daily cash flow with ease.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <svg
+                class="w-6 h-6 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Financial Reports
+            </h3>
+            <p class="text-gray-600">
+              Generate BIR-ready reports, seasonal analysis for tourism
+              businesses, and comprehensive income statements.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <svg
+                class="w-6 h-6 text-purple-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Tourism Analytics
+            </h3>
+            <p class="text-gray-600">
+              Track seasonal trends, peak tourist months, and optimize pricing
+              for resorts and tour packages.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <svg
+                class="w-6 h-6 text-yellow-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Local Business Categories
+            </h3>
+            <p class="text-gray-600">
+              Pre-configured for Camiguin businesses: resort operations, boat
+              rentals, food services, and retail stores.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <svg
+                class="w-6 h-6 text-red-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Daily Operations Log
+            </h3>
+            <p class="text-gray-600">
+              Monitor daily cash flow, inventory changes, and staff activities -
+              essential for small family businesses.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <svg
+                class="w-6 h-6 text-indigo-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Peso & Tourist Currency
+            </h3>
+            <p class="text-gray-600">
+              Handle both peso transactions and foreign currency from tourists
+              visiting your resort or tour business.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-20 bg-gradient-to-br from-green-50 to-blue-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Perfect for Camiguin Business Types
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            PayTrack understands the unique needs of different businesses across
+            Mambajao and Camiguin Island.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto"
+            >
+              <svg
+                class="w-8 h-8 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-center mb-3">
+              Tourism & Resorts
+            </h3>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li>• Beach resort bookings</li>
+              <li>• Island hopping tours</li>
+              <li>• White Island trips</li>
+              <li>• Seasonal revenue tracking</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto"
+            >
+              <svg
+                class="w-8 h-8 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-center mb-3">
+              Food & Restaurants
+            </h3>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li>• Lanzones specialty dishes</li>
+              <li>• Seafood restaurants</li>
+              <li>• Local delicacies</li>
+              <li>• Inventory & supplies</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4 mx-auto"
+            >
+              <svg
+                class="w-8 h-8 text-yellow-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-center mb-3">
+              Retail & Sari-Sari
+            </h3>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li>• Daily sales tracking</li>
+              <li>• Inventory management</li>
+              <li>• Customer credit records</li>
+              <li>• Supplier payments</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4 mx-auto"
+            >
+              <svg
+                class="w-8 h-8 text-purple-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-center mb-3">
+              Transportation
+            </h3>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li>• Jeepney operations</li>
+              <li>• Habal-habal services</li>
+              <li>• Boat rentals</li>
+              <li>• Fuel & maintenance costs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="register" class="bg-blue-600 py-20">
+      <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Join Camiguin's Growing Business Community
+        </h2>
+        <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          From sari-sari stores in Balbagon to resorts along the coast, local
+          business owners trust PayTrack to manage their finances effectively.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#register"
+            class="bg-white hover:bg-gray-50 text-blue-600 px-8 py-3 rounded-lg text-lg font-semibold transition duration-150 ease-in-out shadow-lg hover:shadow-xl"
+          >
+            Get Start
+          </a>
+          <a
+            href="#login"
+            class="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-lg text-lg font-semibold border-2 border-blue-400 transition duration-150 ease-in-out"
+          >
+            Sign In
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-gray-800 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="col-span-1 md:col-span-2">
+            <h3 class="text-2xl font-bold text-white mb-4">PayTrack</h3>
+            <p class="text-gray-300 mb-4">
+              Supporting the financial growth of small businesses in Balbagon,
+              Mambajao, and across beautiful Camiguin Island with intuitive
+              tools and comprehensive reporting.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold mb-4">Features</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a
+                  href="#features"
+                  class="hover:text-white transition duration-150"
+                  >Transaction Tracking</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#features"
+                  class="hover:text-white transition duration-150"
+                  >Financial Reports</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#features"
+                  class="hover:text-white transition duration-150"
+                  >Category Management</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#features"
+                  class="hover:text-white transition duration-150"
+                  >Activity Logs</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold mb-4">Support</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a href="#" class="hover:text-white transition duration-150"
+                  >Documentation</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition duration-150"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition duration-150"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition duration-150"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 pt-8 mt-8 text-center">
+          <p class="text-gray-400">
+            © <span id="currentYear"></span> Financial Management. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

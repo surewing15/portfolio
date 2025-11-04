@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camiguin Online Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-50">
+    <nav class="bg-gradient-to-r from-orange-500 to-orange-400 px-6 py-4">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <div class="bg-white p-2 rounded">
+            <i class="fas fa-shopping-bag text-orange-500 text-xl"></i>
+          </div>
+          <span class="text-white font-bold text-xl"
+            >Camiguin Online Store</span
+          >
+        </div>
+
+        <div class="flex items-center space-x-6">
+          <a
+            href="#"
+            class="text-white hover:text-orange-100 flex items-center space-x-1"
+          >
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+          <a
+            href="#"
+            class="text-white hover:text-orange-100 flex items-center space-x-1"
+          >
+            <i class="fas fa-box"></i>
+            <span>Products</span>
+          </a>
+          <a
+            href="#"
+            class="text-white hover:text-orange-100 flex items-center space-x-1"
+          >
+            <i class="fas fa-th-large"></i>
+            <span>Categories</span>
+          </a>
+          <button class="text-white hover:text-orange-100">Login</button>
+          <button
+            class="bg-white text-orange-500 px-4 py-2 rounded-lg hover:bg-orange-50 flex items-center space-x-1"
+          >
+            <i class="fas fa-user-plus"></i>
+            <span>Register</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="bg-gradient-to-r from-pink-600 to-pink-500 px-6 py-3 relative">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-center space-x-8 text-white text-sm"
+      >
+        <button class="absolute left-4 text-white hover:text-pink-200">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-bolt"></i>
+          <span>FLASH SALE - 24 HOURS ONLY</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-tag"></i>
+          <span>Up to 90% OFF Everything</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-truck"></i>
+          <span>FREE Express Shipping</span>
+        </div>
+      </div>
+    </div>
+
+    <section
+      class="bg-gradient-to-br from-orange-400 via-pink-400 to-pink-500 px-6 py-20 relative overflow-hidden"
+    >
+      <div
+        class="absolute top-10 left-10 w-32 h-32 bg-orange-300 rounded-full opacity-50"
+      ></div>
+      <div
+        class="absolute bottom-10 right-10 w-40 h-40 bg-pink-300 rounded-full opacity-30"
+      ></div>
+
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10"
+      >
+        <div class="text-white">
+          <h1 class="text-6xl font-bold mb-4">
+            MEGA <span class="text-yellow-300">SALE</span>
+          </h1>
+          <h2 class="text-5xl font-bold mb-6">Up to 90% OFF</h2>
+          <p class="text-lg mb-2">
+            Don't miss out on the biggest sale of the year!
+          </p>
+          <p class="text-lg mb-8">
+            Limited time offers on thousands of products.
+          </p>
+
+          <div class="flex space-x-4">
+            <button
+              class="bg-white text-orange-500 px-8 py-3 rounded-full font-semibold hover:bg-orange-50 flex items-center space-x-2"
+            >
+              <i class="fas fa-shopping-bag"></i>
+              <span>SHOP NOW</span>
+            </button>
+            <button
+              class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-pink-500 flex items-center space-x-2"
+            >
+              <i class="fas fa-bolt"></i>
+              <span>Flash Deals</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div
+            class="bg-white p-6 rounded-2xl shadow-lg transform rotate-3 hover:rotate-0 transition-transform"
+          >
+            <div class="text-4xl font-bold text-orange-500">90%</div>
+            <div class="text-gray-600 text-sm">OFF</div>
+          </div>
+          <div
+            class="bg-white p-6 rounded-2xl shadow-lg transform -rotate-3 hover:rotate-0 transition-transform"
+          >
+            <div class="text-4xl font-bold text-red-500">FREE</div>
+            <div class="text-gray-600 text-sm">SHIPPING</div>
+          </div>
+          <div
+            class="bg-white p-6 rounded-2xl shadow-lg transform -rotate-2 hover:rotate-0 transition-transform"
+          >
+            <div class="text-4xl font-bold text-green-500">₱100</div>
+            <div class="text-gray-600 text-sm">CASHBACK</div>
+          </div>
+          <div
+            class="bg-white p-6 rounded-2xl shadow-lg transform rotate-2 hover:rotate-0 transition-transform"
+          >
+            <div class="text-4xl font-bold text-blue-500">24/7</div>
+            <div class="text-gray-600 text-sm">SUPPORT</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-8">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-4 md:grid-cols-8 gap-6">
+          <div
+            class="flex flex-col items-center space-y-2 cursor-pointer group"
+          >
+            <div
+              class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center group-hover:bg-orange-200 transition-colors"
+            >
+              <i class="fas fa-bolt text-orange-500 text-2xl"></i>
+            </div>
+            <span class="text-sm text-gray-700">Flash Deals</span>
+          </div>
+
+          <div
+            class="flex flex-col items-center space-y-2 cursor-pointer group"
+          >
+            <div
+              class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center group-hover:bg-pink-200 transition-colors"
+            >
+              <i class="fas fa-tag text-pink-500 text-2xl"></i>
+            </div>
+            <span class="text-sm text-gray-700">Brands</span>
+          </div>
+
+          <div
+            class="flex flex-col items-center space-y-2 cursor-pointer group"
+          >
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-200 transition-colors"
+            >
+              <i class="fas fa-coins text-green-500 text-2xl"></i>
+            </div>
+            <span class="text-sm text-gray-700">Coins</span>
+          </div>
+
+          <div
+            class="flex flex-col items-center space-y-2 cursor-pointer group"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors"
+            >
+              <i class="fas fa-ticket-alt text-blue-500 text-2xl"></i>
+            </div>
+            <span class="text-sm text-gray-700">Vouchers</span>
+          </div>
+
+          <div
+            class="flex flex-col items-center space-y-2 cursor-pointer group"
+          >
+            <div
+              class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-purple-200 transition-colors"
+            >
+              <i class="fas fa-certificate text-purple-500 text-2xl"></i>
+            </div>
+            <span class="text-sm text-gray-700">Authentic</span>
+          </div>
+
+          <div
+            class="flex flex-col items-center space-y-2 cursor-pointer group"
+          >
+            <div
+              class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center group-hover:bg-red-200 transition-colors"
+            >
+              <i class="fas fa-heart text-red-500 text-2xl"></i>
+            </div>
+            <span class="text-sm text-gray-700">Favorites</span>
+          </div>
+
+          <div
+            class="flex flex-col items-center space-y-2 cursor-pointer group"
+          >
+            <div
+              class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center group-hover:bg-yellow-200 transition-colors"
+            >
+              <i class="fas fa-question-circle text-yellow-500 text-2xl"></i>
+            </div>
+            <span class="text-sm text-gray-700">Help</span>
+          </div>
+
+          <div
+            class="flex flex-col items-center space-y-2 cursor-pointer group"
+          >
+            <div
+              class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center group-hover:bg-indigo-200 transition-colors"
+            >
+              <i class="fas fa-mobile-alt text-indigo-500 text-2xl"></i>
+            </div>
+            <span class="text-sm text-gray-700">Mobile App</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-50 py-12">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-center justify-between mb-8">
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-bolt text-orange-500 text-2xl"></i>
+            <h2 class="text-3xl font-bold text-gray-800">FLASH DEALS</h2>
+            <span class="bg-red-500 text-white text-xs px-3 py-1 rounded-full"
+              >Limited Time!</span
+            >
+          </div>
+
+          <div class="flex items-center space-x-2">
+            <span class="text-gray-600">Ends in:</span>
+            <div class="bg-black text-white px-3 py-2 rounded font-bold">
+              02
+            </div>
+            <span class="text-gray-600">:</span>
+            <div class="bg-black text-white px-3 py-2 rounded font-bold">
+              14
+            </div>
+            <span class="text-gray-600">:</span>
+            <div class="bg-black text-white px-3 py-2 rounded font-bold">
+              37
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div
+            class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer"
+          >
+            <div class="relative">
+              <span
+                class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded"
+                >-77%</span
+              >
+              <span
+                class="absolute top-2 right-2 bg-yellow-400 text-black text-xs px-2 py-1 rounded font-bold"
+                >FLASH</span
+              >
+              <div
+                class="bg-gray-200 aspect-square flex items-center justify-center"
+              >
+                <i class="fas fa-image text-gray-400 text-5xl"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-sm text-gray-800 mb-2">Flash Deal Product 1</h3>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer"
+          >
+            <div class="relative">
+              <span
+                class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded"
+                >-85%</span
+              >
+              <span
+                class="absolute top-2 right-2 bg-yellow-400 text-black text-xs px-2 py-1 rounded font-bold"
+                >FLASH</span
+              >
+              <div
+                class="bg-gray-200 aspect-square flex items-center justify-center"
+              >
+                <i class="fas fa-image text-gray-400 text-5xl"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-sm text-gray-800 mb-2">Flash Deal Product 2</h3>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer"
+          >
+            <div class="relative">
+              <span
+                class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded"
+                >-88%</span
+              >
+              <span
+                class="absolute top-2 right-2 bg-yellow-400 text-black text-xs px-2 py-1 rounded font-bold"
+                >FLASH</span
+              >
+              <div
+                class="bg-gray-200 aspect-square flex items-center justify-center"
+              >
+                <i class="fas fa-image text-gray-400 text-5xl"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-sm text-gray-800 mb-2">Flash Deal Product 3</h3>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer"
+          >
+            <div class="relative">
+              <span
+                class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded"
+                >-67%</span
+              >
+              <span
+                class="absolute top-2 right-2 bg-yellow-400 text-black text-xs px-2 py-1 rounded font-bold"
+                >FLASH</span
+              >
+              <div
+                class="bg-gray-200 aspect-square flex items-center justify-center"
+              >
+                <i class="fas fa-image text-gray-400 text-5xl"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-sm text-gray-800 mb-2">Flash Deal Product 4</h3>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer"
+          >
+            <div class="relative">
+              <span
+                class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded"
+                >-89%</span
+              >
+              <span
+                class="absolute top-2 right-2 bg-yellow-400 text-black text-xs px-2 py-1 rounded font-bold"
+                >FLASH</span
+              >
+              <div
+                class="bg-gray-200 aspect-square flex items-center justify-center"
+              >
+                <i class="fas fa-image text-gray-400 text-5xl"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-sm text-gray-800 mb-2">Flash Deal Product 5</h3>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer"
+          >
+            <div class="relative">
+              <span
+                class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded"
+                >-72%</span
+              >
+              <span
+                class="absolute top-2 right-2 bg-yellow-400 text-black text-xs px-2 py-1 rounded font-bold"
+                >FLASH</span
+              >
+              <div
+                class="bg-gray-200 aspect-square flex items-center justify-center"
+              >
+                <i class="fas fa-image text-gray-400 text-5xl"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-sm text-gray-800 mb-2">Flash Deal Product 6</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

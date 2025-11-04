@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Island Job Matching - Find Your Dream Job in Paradise</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      @keyframes wave {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+
+        25% {
+          transform: rotate(15deg);
+        }
+
+        75% {
+          transform: rotate(-15deg);
+        }
+      }
+
+      @keyframes bounce-in {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+
+        50% {
+          transform: scale(1.1);
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes tropical-glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+        }
+
+        50% {
+          box-shadow: 0 0 40px rgba(34, 197, 94, 0.8),
+            0 0 60px rgba(251, 191, 36, 0.4);
+        }
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .animate-fadeInUp {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .animate-pulse-custom {
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      .animate-wave {
+        animation: wave 2s ease-in-out infinite;
+      }
+
+      .animate-bounce-in {
+        animation: bounce-in 0.6s ease-out;
+      }
+
+      .animate-tropical-glow {
+        animation: tropical-glow 3s ease-in-out infinite;
+      }
+
+      .glassmorphism {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .tropical-glass {
+        background: linear-gradient(
+          135deg,
+          rgba(34, 197, 94, 0.1) 0%,
+          rgba(59, 130, 246, 0.1) 50%,
+          rgba(168, 85, 247, 0.1) 100%
+        );
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .gradient-text {
+        background: linear-gradient(
+          135deg,
+          #059669 0%,
+          #0ea5e9 50%,
+          #8b5cf6 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .tropical-gradient {
+        background: linear-gradient(
+          135deg,
+          #065f46 0%,
+          #0c4a6e 25%,
+          #7c3aed 50%,
+          #dc2626 75%,
+          #ea580c 100%
+        );
+      }
+
+      .island-pattern {
+        background-image: radial-gradient(
+            circle at 20% 30%,
+            rgba(34, 197, 94, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(59, 130, 246, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(251, 191, 36, 0.1) 0%,
+            transparent 50%
+          );
+      }
+
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .card-hover:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25),
+          0 0 40px rgba(34, 197, 94, 0.15);
+      }
+
+      .parallax-bg {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .text-shadow {
+        text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .island-counter {
+        background: linear-gradient(
+          135deg,
+          rgba(34, 197, 94, 0.9),
+          rgba(59, 130, 246, 0.9)
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .island-counter::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="30" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>')
+          repeat;
+        animation: float 20s linear infinite;
+      }
+
+      .volcano-icon {
+        background: linear-gradient(45deg, #dc2626, #ea580c);
+        background-size: 200% 200%;
+        animation: tropical-glow 2s ease-in-out infinite;
+      }
+
+      .palm-tree {
+        filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
+      }
+
+      @media (max-width: 768px) {
+        .parallax-bg {
+          background-attachment: scroll;
+        }
+      }
+
+      .job-category-card {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.9) 0%,
+          rgba(255, 255, 255, 0.7) 100%
+        );
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .job-category-card:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.95) 0%,
+          rgba(255, 255, 255, 0.85) 100%
+        );
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-gradient-to-br from-emerald-50 via-blue-50 to-purple-50 overflow-x-hidden"
+  >
+    <nav
+      class="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-emerald-100"
+      x-data="{ mobileMenuOpen: false, scrolled: false }"
+      x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 10)"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-18">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 volcano-icon rounded-xl flex items-center justify-center"
+            >
+              <i class="fas fa-mountain text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold gradient-text">
+                Island Job Matching
+              </h1>
+              <p class="text-xs text-emerald-600 font-medium">
+                Camiguin Island Paradise
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#features"
+              class="text-gray-600 hover:text-emerald-600 font-medium transition duration-300 relative group"
+            >
+              Features
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 transition-all group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#job-categories"
+              class="text-gray-600 hover:text-emerald-600 font-medium transition duration-300 relative group"
+            >
+              Island Jobs
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 transition-all group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#how-it-works"
+              class="text-gray-600 hover:text-emerald-600 font-medium transition duration-300 relative group"
+            >
+              How It Works
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 transition-all group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#testimonials"
+              class="text-gray-600 hover:text-emerald-600 font-medium transition duration-300 relative group"
+            >
+              Success Stories
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 transition-all group-hover:w-full"
+              ></span>
+            </a>
+
+            <a
+              href="#login"
+              class="text-gray-600 hover:text-emerald-600 font-medium transition duration-300"
+            >
+              Sign In
+            </a>
+            <a
+              href="#register"
+              class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-600 to-blue-600 text-white font-medium rounded-xl hover:from-emerald-700 hover:to-blue-700 transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              <i class="fas fa-seedling mr-2"></i>
+              Start Your Journey
+            </a>
+          </div>
+
+          <button
+            @click="mobileMenuOpen = !mobileMenuOpen"
+            class="md:hidden p-2"
+          >
+            <i class="fas fa-bars text-gray-600"></i>
+          </button>
+        </div>
+      </div>
+
+      <div
+        x-show="mobileMenuOpen"
+        x-transition
+        class="md:hidden bg-white/95 backdrop-blur-md border-t border-emerald-100"
+      >
+        <div class="px-4 py-4 space-y-4">
+          <a
+            href="#features"
+            class="block text-gray-600 hover:text-emerald-600 font-medium"
+            >Features</a
+          >
+          <a
+            href="#job-categories"
+            class="block text-gray-600 hover:text-emerald-600 font-medium"
+            >Island Jobs</a
+          >
+          <a
+            href="#how-it-works"
+            class="block text-gray-600 hover:text-emerald-600 font-medium"
+            >How It Works</a
+          >
+          <a
+            href="#testimonials"
+            class="block text-gray-600 hover:text-emerald-600 font-medium"
+            >Success Stories</a
+          >
+          <a
+            href="#login"
+            class="block text-gray-600 hover:text-emerald-600 font-medium"
+            >Sign In</a
+          >
+          <a
+            href="#register"
+            class="block w-full text-center px-4 py-2 bg-emerald-600 text-white rounded-lg"
+            >Start Your Journey</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="relative tropical-gradient text-white overflow-hidden island-pattern min-h-screen flex items-center"
+    >
+      <div class="absolute inset-0">
+        <div
+          class="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-float"
+        ></div>
+        <div
+          class="absolute top-40 right-10 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl animate-float"
+          style="animation-delay: -2s"
+        ></div>
+        <div
+          class="absolute bottom-20 left-1/3 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl animate-float"
+          style="animation-delay: -4s"
+        ></div>
+
+        <div
+          class="absolute top-32 right-1/4 w-16 h-8 bg-emerald-400/20 rounded-full blur-sm animate-float"
+          style="animation-delay: -1s"
+        ></div>
+        <div
+          class="absolute bottom-40 left-1/4 w-12 h-6 bg-blue-400/20 rounded-full blur-sm animate-float"
+          style="animation-delay: -3s"
+        ></div>
+      </div>
+
+      <div
+        class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="text-center lg:text-left animate-fadeInUp">
+            <h1
+              class="text-5xl lg:text-7xl font-bold mb-8 leading-tight text-shadow"
+            >
+              Your Dream Career
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-400 to-pink-400"
+              >
+                Awaits in Paradise
+              </span>
+            </h1>
+
+            <p class="text-xl lg:text-2xl mb-10 text-black leading-relaxed">
+              Discover incredible career opportunities on
+              <span class="text-green-500 font-semibold">Camiguin Island</span>
+              - where volcanic landscapes meet azure waters, and your perfect
+              job awaits.
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-12"
+            >
+              <a
+                href="#register-applicant"
+                class="group inline-flex items-center px-8 py-4 bg-white text-emerald-600 rounded-xl font-semibold text-lg hover:bg-gray-100 transition duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105"
+              >
+                <i
+                  class="fas fa-palm-tree mr-3 group-hover:animate-wave transition duration-300"
+                ></i>
+                Find Island Jobs
+                <i
+                  class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition duration-300"
+                ></i>
+              </a>
+              <a
+                href="#register-employer"
+                class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-xl font-semibold text-lg hover:from-yellow-500 hover:to-orange-600 transition duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105"
+              >
+                <i
+                  class="fas fa-volcano mr-3 group-hover:bounce transition duration-300"
+                ></i>
+                Hire Island Talent
+                <i
+                  class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition duration-300"
+                ></i>
+              </a>
+            </div>
+
+            <div
+              class="flex flex-wrap items-center justify-center lg:justify-start gap-8 text-white"
+            >
+              <div class="flex items-center space-x-2">
+                <i class="fas fa-certificate text-green-400"></i>
+                <span class="text-sm font-medium text-black"
+                  >PESO Certified</span
+                >
+              </div>
+              <div class="flex items-center space-x-2">
+                <i class="fas fa-island-tropical text-yellow-400"></i>
+                <span class="text-sm font-medium text-black"
+                  >5 Municipalities</span
+                >
+              </div>
+              <div class="flex items-center space-x-2">
+                <i class="fas fa-heart text-pink-400"></i>
+                <span class="text-sm font-medium text-black"
+                  >Island Community</span
+                >
+              </div>
+              <div class="flex items-center space-x-2">
+                <i class="fas fa-star text-yellow-400"></i>
+                <span class="text-sm font-medium text-black">4.9/5 Rating</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:flex justify-center items-center animate-fadeInUp"
+            style="animation-delay: 0.3s"
+          >
+            <div class="relative">
+              <div
+                class="w-96 h-96 tropical-glass rounded-3xl p-8 animate-float"
+              >
+                <div
+                  class="h-full flex flex-col justify-center items-center space-y-6"
+                >
+                  <div
+                    class="w-full bg-white/20 rounded-2xl p-4 relative overflow-hidden"
+                  >
+                    <div class="absolute top-0 right-0 text-2xl animate-wave">
+                      🌴
+                    </div>
+                    <div class="flex items-center space-x-3 mb-3">
+                      <div
+                        class="w-8 h-8 bg-emerald-400 rounded-full animate-pulse"
+                      ></div>
+                      <div class="flex-1 bg-white/30 rounded-lg h-3"></div>
+                    </div>
+                    <div class="space-y-2">
+                      <div class="bg-white/30 rounded h-2"></div>
+                      <div class="bg-white/30 rounded h-2 w-3/4"></div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between w-full">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-blue-500 rounded-2xl flex items-center justify-center animate-pulse-custom relative"
+                    >
+                      <i class="fas fa-user text-white text-2xl"></i>
+                      <div class="absolute -top-2 -right-2 text-lg">🏝️</div>
+                    </div>
+                    <div class="flex-1 mx-4 relative">
+                      <div
+                        class="h-1 bg-gradient-to-r from-emerald-300 to-blue-300 rounded"
+                      ></div>
+                      <div
+                        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                      >
+                        <i
+                          class="fas fa-heart text-pink-400 text-lg animate-pulse"
+                        ></i>
+                      </div>
+                    </div>
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-orange-400 to-pink-500 rounded-2xl flex items-center justify-center animate-pulse-custom relative"
+                      style="animation-delay: 1s"
+                    >
+                      <i class="fas fa-building text-white text-2xl"></i>
+                      <div class="absolute -top-2 -right-2 text-lg">🌋</div>
+                    </div>
+                  </div>
+
+                  <div class="text-center text-white/90 font-medium">
+                    <i class="fas fa-magic mr-2"></i>
+                    Island Smart Matching
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="absolute -top-6 -right-6 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center animate-bounce"
+              >
+                <span class="text-lg">🌟</span>
+              </div>
+              <div
+                class="absolute -bottom-6 -left-6 w-12 h-12 bg-emerald-400 rounded-full flex items-center justify-center animate-pulse"
+              >
+                <span class="text-lg">✅</span>
+              </div>
+              <div
+                class="absolute top-20 -left-8 w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center animate-float"
+                style="animation-delay: -2s"
+              >
+                <span class="text-sm">🐚</span>
+              </div>
+              <div
+                class="absolute bottom-20 -right-8 w-10 h-10 bg-pink-400 rounded-full flex items-center justify-center animate-float"
+                style="animation-delay: -3s"
+              >
+                <span class="text-sm">🌺</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="job-categories" class="py-20 bg-white relative">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-emerald-50/50 to-blue-50/50"
+      ></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fadeInUp">
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <span class="gradient-text">Island Opportunities</span> Await
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            From pristine beaches to volcanic peaks, discover diverse career
+            paths that match Camiguin's unique island lifestyle
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="job-category-card rounded-2xl p-6 text-center">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-umbrella-beach text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Tourism & Hospitality
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Beach resorts, eco-tours, diving centers, restaurants
+            </p>
+            <div class="text-blue-600 font-semibold text-sm">
+              450+ Active Jobs
+            </div>
+          </div>
+
+          <div class="job-category-card rounded-2xl p-6 text-center">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-seedling text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Agriculture & Farming
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Lanzones, cassava, coconut, organic farming
+            </p>
+            <div class="text-green-600 font-semibold text-sm">
+              320+ Active Jobs
+            </div>
+          </div>
+
+          <div class="job-category-card rounded-2xl p-6 text-center">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-fish text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Fishing & Marine
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Sustainable fishing, marine conservation, aquaculture
+            </p>
+            <div class="text-cyan-600 font-semibold text-sm">
+              180+ Active Jobs
+            </div>
+          </div>
+
+          <div class="job-category-card rounded-2xl p-6 text-center">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-graduation-cap text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Education & Training
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Schools, vocational training, skills development
+            </p>
+            <div class="text-purple-600 font-semibold text-sm">
+              240+ Active Jobs
+            </div>
+          </div>
+
+          <div class="job-category-card rounded-2xl p-6 text-center">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-heartbeat text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Healthcare Services
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Hospitals, clinics, wellness centers, elderly care
+            </p>
+            <div class="text-pink-600 font-semibold text-sm">
+              160+ Active Jobs
+            </div>
+          </div>
+
+          <div class="job-category-card rounded-2xl p-6 text-center">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-laptop-code text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Remote & Digital
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Work from paradise, digital marketing, freelancing
+            </p>
+            <div class="text-orange-600 font-semibold text-sm">
+              95+ Active Jobs
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="features"
+      class="py-20 bg-gradient-to-br from-emerald-50 to-blue-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fadeInUp">
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Why Choose <span class="gradient-text">Island Job Matching</span>?
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Designed specifically for Camiguin Island's unique employment
+            landscape and island lifestyle
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="card-hover bg-white rounded-2xl p-8 border border-emerald-100 shadow-lg"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 animate-tropical-glow"
+            >
+              <i class="fas fa-island-tropical text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Island-Smart Matching
+            </h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              AI that understands Camiguin's seasonal tourism patterns,
+              agricultural cycles, and unique island work-life balance
+              requirements.
+            </p>
+            <div class="flex items-center text-emerald-600 font-semibold">
+              <span>Discover More</span>
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition duration-300"
+              ></i>
+            </div>
+          </div>
+
+          <div
+            class="card-hover bg-white rounded-2xl p-8 border border-emerald-100 shadow-lg"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-handshake text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              PESO Partnership
+            </h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Official collaboration with PESO Camiguin ensures all
+              opportunities are legitimate, fair, and compliant with labor
+              standards.
+            </p>
+            <div class="flex items-center text-blue-600 font-semibold">
+              <span>Learn More</span>
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition duration-300"
+              ></i>
+            </div>
+          </div>
+
+          <div
+            class="card-hover bg-white rounded-2xl p-8 border border-emerald-100 shadow-lg"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-orange-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-balance-scale text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Work-Life Paradise
+            </h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Find jobs that let you enjoy island living - flexible schedules,
+              proximity to beaches, and opportunities for outdoor activities.
+            </p>
+            <div class="flex items-center text-orange-600 font-semibold">
+              <span>Explore Benefits</span>
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition duration-300"
+              ></i>
+            </div>
+          </div>
+
+          <div
+            class="card-hover bg-white rounded-2xl p-8 border border-emerald-100 shadow-lg"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-leaf text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Sustainable Careers
+            </h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Focus on eco-friendly jobs, sustainable tourism, and green
+              initiatives that preserve Camiguin's natural beauty.
+            </p>
+            <div class="flex items-center text-green-600 font-semibold">
+              <span>Go Green</span>
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition duration-300"
+              ></i>
+            </div>
+          </div>
+
+          <div
+            class="card-hover bg-white rounded-2xl p-8 border border-emerald-100 shadow-lg"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-users text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Island Community
+            </h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Connect with local professionals, join island networking events,
+              and build meaningful relationships in your community.
+            </p>
+            <div class="flex items-center text-purple-600 font-semibold">
+              <span>Join Community</span>
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition duration-300"
+              ></i>
+            </div>
+          </div>
+
+          <div
+            class="card-hover bg-white rounded-2xl p-8 border border-emerald-100 shadow-lg"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-mobile-alt text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Mobile Island Hub
+            </h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Apply from anywhere on the island - whether you're on the beach,
+              in the mountains, or at a local café with WiFi.
+            </p>
+            <div class="flex items-center text-cyan-600 font-semibold">
+              <span>Get Mobile</span>
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition duration-300"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fadeInUp">
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Your Island Career Journey
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Three simple steps to finding your perfect job in paradise
+          </p>
+        </div>
+
+        <div class="relative">
+          <div
+            class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-emerald-200 via-blue-200 to-purple-200 transform -translate-y-1/2"
+          ></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10">
+            <div
+              class="text-center card-hover bg-white rounded-2xl p-8 shadow-lg border border-emerald-100"
+            >
+              <div class="relative mb-8">
+                <div
+                  class="w-24 h-24 bg-gradient-to-br from-emerald-500 to-blue-600 rounded-full flex items-center justify-center mx-auto shadow-2xl"
+                >
+                  <i class="fas fa-user-plus text-white text-3xl"></i>
+                </div>
+                <div
+                  class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold text-sm"
+                >
+                  1
+                </div>
+                <div
+                  class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 text-2xl"
+                >
+                  🏝️
+                </div>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Create Your Island Profile
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Build your profile highlighting your skills, island lifestyle
+                preferences, and career goals. Tell us about your ideal work
+                environment.
+              </p>
+              <div class="space-y-2 text-sm text-gray-500">
+                <div class="flex items-center justify-center space-x-2">
+                  <i class="fas fa-check text-emerald-500"></i>
+                  <span>Island Lifestyle Preferences</span>
+                </div>
+                <div class="flex items-center justify-center space-x-2">
+                  <i class="fas fa-check text-emerald-500"></i>
+                  <span>Skills & Experience</span>
+                </div>
+                <div class="flex items-center justify-center space-x-2">
+                  <i class="fas fa-check text-emerald-500"></i>
+                  <span>Work-Life Balance Goals</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="text-center card-hover bg-white rounded-2xl p-8 shadow-lg border border-emerald-100"
+            >
+              <div class="relative mb-8">
+                <div
+                  class="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto shadow-2xl"
+                >
+                  <i class="fas fa-search-location text-white text-3xl"></i>
+                </div>
+                <div
+                  class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold text-sm"
+                >
+                  2
+                </div>
+                <div
+                  class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 text-2xl"
+                >
+                  🌋
+                </div>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Island Smart Discovery
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Our AI discovers opportunities across all 5 municipalities,
+                matching you with jobs that fit both your skills and island
+                lifestyle.
+              </p>
+              <div class="space-y-2 text-sm text-gray-500">
+                <div class="flex items-center justify-center space-x-2">
+                  <i class="fas fa-check text-emerald-500"></i>
+                  <span>5 Municipality Coverage</span>
+                </div>
+                <div class="flex items-center justify-center space-x-2">
+                  <i class="fas fa-check text-emerald-500"></i>
+                  <span>Seasonal Job Alerts</span>
+                </div>
+                <div class="flex items-center justify-center space-x-2">
+                  <i class="fas fa-check text-emerald-500"></i>
+                  <span>Paradise Work Matching</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="text-center card-hover bg-white rounded-2xl p-8 shadow-lg border border-emerald-100"
+            >
+              <div class="relative mb-8">
+                <div
+                  class="w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto shadow-2xl"
+                >
+                  <i class="fas fa-handshake text-white text-3xl"></i>
+                </div>
+                <div
+                  class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold text-sm"
+                >
+                  3
+                </div>
+                <div
+                  class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 text-2xl"
+                >
+                  🌺
+                </div>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Start Your Paradise Career
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Connect with island employers, schedule interviews, and begin
+                your dream career in one of the Philippines' most beautiful
+                destinations.
+              </p>
+              <div class="space-y-2 text-sm text-gray-500">
+                <div class="flex items-center justify-center space-x-2">
+                  <i class="fas fa-check text-emerald-500"></i>
+                  <span>Direct Employer Connect</span>
+                </div>
+                <div class="flex items-center justify-center space-x-2">
+                  <i class="fas fa-check text-emerald-500"></i>
+                  <span>Island Interview Scheduling</span>
+                </div>
+                <div class="flex items-center justify-center space-x-2">
+                  <i class="fas fa-check text-emerald-500"></i>
+                  <span>Career Support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 island-counter text-white relative overflow-hidden">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4 text-shadow">
+            Island Success by the Numbers
+          </h2>
+          <p class="text-xl text-blue-100">
+            Growing Camiguin's career opportunities one match at a time
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div
+            class="text-center transform hover:scale-105 transition duration-300"
+          >
+            <div class="text-5xl lg:text-6xl font-bold mb-2 text-yellow-300">
+              2,500+
+            </div>
+            <div class="text-blue-100 text-lg font-medium">
+              Island Job Seekers
+            </div>
+            <div class="w-16 h-1 bg-yellow-300 mx-auto mt-3 rounded-full"></div>
+            <div class="text-3xl mt-2">🏝️</div>
+          </div>
+          <div
+            class="text-center transform hover:scale-105 transition duration-300"
+          >
+            <div class="text-5xl lg:text-6xl font-bold mb-2 text-green-300">
+              450+
+            </div>
+            <div class="text-blue-100 text-lg font-medium">Local Employers</div>
+            <div class="w-16 h-1 bg-green-300 mx-auto mt-3 rounded-full"></div>
+            <div class="text-3xl mt-2">🏢</div>
+          </div>
+          <div
+            class="text-center transform hover:scale-105 transition duration-300"
+          >
+            <div class="text-5xl lg:text-6xl font-bold mb-2 text-orange-300">
+              1,200+
+            </div>
+            <div class="text-blue-100 text-lg font-medium">
+              Paradise Matches
+            </div>
+            <div class="w-16 h-1 bg-orange-300 mx-auto mt-3 rounded-full"></div>
+            <div class="text-3xl mt-2">❤️</div>
+          </div>
+          <div
+            class="text-center transform hover:scale-105 transition duration-300"
+          >
+            <div class="text-5xl lg:text-6xl font-bold mb-2 text-pink-300">
+              5
+            </div>
+            <div class="text-blue-100 text-lg font-medium">Municipalities</div>
+            <div class="w-16 h-1 bg-pink-300 mx-auto mt-3 rounded-full"></div>
+            <div class="text-3xl mt-2">🌋</div>
+          </div>
+        </div>
+
+        <div class="mt-16 text-center">
+          <h3 class="text-2xl font-bold mb-8">
+            Covering All of Camiguin Island
+          </h3>
+          <div class="flex flex-wrap justify-center gap-4 text-sm">
+            <span class="px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm"
+              >Mambajao</span
+            >
+            <span class="px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm"
+              >Catarman</span
+            >
+            <span class="px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm"
+              >Guinsiliban</span
+            >
+            <span class="px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm"
+              >Mahinog</span
+            >
+            <span class="px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm"
+              >Sagay</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="py-20 bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-700 text-white relative overflow-hidden"
+    >
+      <div class="absolute inset-0">
+        <div
+          class="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full blur-2xl animate-float"
+        ></div>
+        <div
+          class="absolute bottom-10 right-10 w-40 h-40 bg-yellow-400/10 rounded-full blur-2xl animate-float"
+          style="animation-delay: -3s"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-400/5 rounded-full blur-3xl animate-float"
+          style="animation-delay: -1s"
+        ></div>
+
+        <div
+          class="absolute top-20 right-1/4 text-4xl animate-float opacity-20"
+          style="animation-delay: -2s"
+        >
+          🌴
+        </div>
+        <div
+          class="absolute bottom-32 left-1/4 text-3xl animate-float opacity-20"
+          style="animation-delay: -4s"
+        >
+          🏝️
+        </div>
+        <div
+          class="absolute top-1/3 left-10 text-2xl animate-float opacity-20"
+          style="animation-delay: -1s"
+        >
+          🌺
+        </div>
+      </div>
+
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div
+          class="inline-flex items-center px-6 py-3 bg-white/20 rounded-full mb-8 animate-bounce-in"
+        >
+          <span class="text-2xl mr-3">🌋</span>
+          <span class="font-medium">Your Island Adventure Starts Here</span>
+          <span class="text-2xl ml-3">🏖️</span>
+        </div>
+
+        <h2
+          class="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-shadow"
+        >
+          Ready to Work in
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-400 to-pink-400"
+          >
+            Paradise?
+          </span>
+        </h2>
+
+        <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+          <a
+            href="#register"
+            class="group inline-flex items-center px-10 py-4 bg-white text-emerald-600 rounded-xl font-bold text-lg hover:bg-gray-100 transition duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105"
+          >
+            <span class="text-2xl mr-3 group-hover:animate-wave">🌴</span>
+            Start Your Island Career
+            <i
+              class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition duration-300"
+            ></i>
+          </a>
+          <a
+            href="#login"
+            class="group inline-flex items-center px-10 py-4 border-2 border-white text-white rounded-xl font-bold text-lg hover:bg-white hover:text-emerald-600 transition duration-300 shadow-2xl"
+          >
+            <i class="fas fa-sign-in-alt mr-3"></i>
+            Welcome Back to Paradise
+          </a>
+        </div>
+
+        <div
+          class="flex flex-wrap justify-center items-center gap-8 text-blue-200"
+        >
+          <div class="flex items-center space-x-2">
+            <span class="text-lg">🔒</span>
+            <span class="text-sm font-medium">Island Secure</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-lg">⚡</span>
+            <span class="text-sm font-medium">Quick Island Setup</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-lg">❤️</span>
+            <span class="text-sm font-medium">Loved by 2,500+ Islanders</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-lg">🏝️</span>
+            <span class="text-sm font-medium">Born in Camiguin</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gradient-to-br from-gray-900 to-slate-800 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div class="lg:col-span-2">
+            <div class="flex items-center space-x-3 mb-6">
+              <div
+                class="w-12 h-12 volcano-icon rounded-lg flex items-center justify-center"
+              >
+                <i class="fas fa-mountain text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold gradient-text text-white">
+                  Island Job Matching
+                </h3>
+                <p class="text-sm text-emerald-400">Camiguin Island Paradise</p>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-6 leading-relaxed max-w-md">
+              Connecting island talent with paradise opportunities. A proud
+              partnership with PESO Camiguin, supporting sustainable careers
+              across all 5 municipalities of our volcanic island home.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="text-xs px-3 py-1 bg-emerald-600/20 text-emerald-300 rounded-full"
+                >Mambajao</span
+              >
+              <span
+                class="text-xs px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full"
+                >Catarman</span
+              >
+              <span
+                class="text-xs px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full"
+                >Guinsiliban</span
+              >
+              <span
+                class="text-xs px-3 py-1 bg-orange-600/20 text-orange-300 rounded-full"
+                >Mahinog</span
+              >
+              <span
+                class="text-xs px-3 py-1 bg-pink-600/20 text-pink-300 rounded-full"
+                >Sagay</span
+              >
+            </div>
+
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-emerald-600 transition duration-300"
+              >
+                <i class="fab fa-facebook-f text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition duration-300"
+              >
+                <i class="fab fa-twitter text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition duration-300"
+              >
+                <i class="fab fa-linkedin-in text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-pink-600 transition duration-300"
+              >
+                <i class="fab fa-instagram text-white"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4
+              class="font-bold text-lg mb-6 text-emerald-400 flex items-center"
+            >
+              <span class="text-xl mr-2">🏝️</span>
+              For Island Job Seekers
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300 flex items-center"
+                >
+                  <i class="fas fa-umbrella-beach mr-2"></i>Tourism Jobs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300 flex items-center"
+                >
+                  <i class="fas fa-seedling mr-2"></i>Agriculture Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300 flex items-center"
+                >
+                  <i class="fas fa-fish mr-2"></i>Marine Opportunities</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300 flex items-center"
+                >
+                  <i class="fas fa-laptop mr-2"></i>Remote Work</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300 flex items-center"
+                >
+                  <i class="fas fa-chart-line mr-2"></i>Career Development</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6 text-blue-400 flex items-center">
+              <span class="text-xl mr-2">🌋</span>
+              For Island Employers
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300 flex items-center"
+                >
+                  <i class="fas fa-plus-circle mr-2"></i>Post Island Jobs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300 flex items-center"
+                >
+                  <i class="fas fa-users mr-2"></i>Find Local Talent</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300 flex items-center"
+                >
+                  <i class="fas fa-leaf mr-2"></i>Sustainable Hiring</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300 flex items-center"
+                >
+                  <i class="fas fa-handshake mr-2"></i>PESO Partnership</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300 flex items-center"
+                >
+                  <i class="fas fa-analytics mr-2"></i>Island Analytics</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0 flex items-center">
+              <span class="text-lg mr-2">🌺</span>
+              &copy; <span id="current-year"></span> Island Job Matching
+              Camiguin. A PESO Camiguin Initiative.
+              <span class="ml-2"></span>
+            </p>
+            <div class="flex space-x-6 text-sm">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+                >Terms of Service</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+                >Island Contact</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300 flex items-center"
+              >
+                <span class="text-lg mr-1">🏝️</span>
+                About Camiguin
+              </a>
+            </div>
+          </div>
+
+          <div class="text-center mt-6 pt-6 border-t border-gray-800">
+            <p
+              class="text-gray-500 text-sm italic flex items-center justify-center"
+            >
+              <span class="text-lg mr-2">🌋</span>
+              "Born of Fire, Blessed by Sea, United by Opportunity"
+              <span class="text-lg ml-2">🌊</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+
+      document.addEventListener("DOMContentLoaded", function () {
+        window.addEventListener("scroll", function () {
+          const scrolled = window.pageYOffset;
+          const parallax = document.querySelector(".island-pattern");
+          const speed = scrolled * 0.5;
+          if (parallax) {
+            parallax.style.transform = `translateY(${speed}px)`;
+          }
+        });
+
+        const floatingElements = document.querySelectorAll(".animate-float");
+        floatingElements.forEach((element, index) => {
+          element.style.animationDelay = `${Math.random() * 4}s`;
+        });
+
+        const jobCards = document.querySelectorAll(".job-category-card");
+        jobCards.forEach((card) => {
+          card.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-8px) scale(1.02)";
+          });
+          card.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0) scale(1)";
+          });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
